@@ -1,3 +1,7 @@
+// ExportButtons.tsx
+// CSV and JSON export buttons for the filtered dataset.
+// Creates a Blob download — works entirely client-side, no server needed.
+
 import React from 'react';
 import { Box, Button, Tooltip } from '@mui/material';
 import { Download } from 'lucide-react';

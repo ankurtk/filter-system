@@ -1,3 +1,15 @@
+// EmployeePage.tsx
+// Main page that wires together:
+//   - FilterBuilder (config-driven, reads EMPLOYEE_FILTER_CONFIG)
+//   - ActiveFilterChips (summary of applied filters)
+//   - DataTable (sortable, receives filtered data)
+//   - ExportButtons
+//
+// Two-stage filter model:
+//   - "pending" conditions live inside FilterBuilder (useFilterState)
+//   - "applied" conditions are stored here and fed to useFilteredData
+//   This prevents the table from re-filtering on every keystroke.
+
 import React, { useState, useCallback } from 'react';
 import {
   Box,

@@ -1,3 +1,9 @@
+// ============================================================
+// operators.ts
+// Maps each FieldType to its allowed operators and their labels.
+// This is the single place to add new operators or field types.
+// ============================================================
+
 import type { FieldType, Operator, OperatorOption } from '../types/filter.types';
 
 /** All operator definitions with display labels. */

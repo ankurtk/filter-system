@@ -1,3 +1,7 @@
+// ActiveFilterChips.tsx
+// Displays a summary of currently applied filter conditions as dismissible chips.
+// Each chip shows: "Field Operator Value" and clicking X removes that filter.
+
 import React from 'react';
 import { Box, Chip, Typography } from '@mui/material';
 import type { FilterCondition, FilterFieldDefinition } from '../../types/filter.types';
