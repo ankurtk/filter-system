@@ -6,7 +6,7 @@ A **reusable, type-safe dynamic filter component system** built with React 18 + 
 
 ## 🚀 Live Demo
 
-> _Deployed on Vercel — link will appear after `vercel --prod`_
+>https://filter-system-ivory.vercel.app/
 
 ---
 
