@@ -1,12 +1,3 @@
-// DataTable.tsx
-// Sortable MUI table that displays employee records with support for:
-//   - Click-to-sort on all columns
-//   - Nested object display (address.city → "San Francisco")
-//   - Array display as MUI Chips (skills[])
-//   - Boolean display as colored Badge
-//   - No-results empty state
-//   - Record count in toolbar
-
 import React, { useState, useMemo } from 'react';
 import {
   Table,

@@ -1,17 +1,7 @@
-// ============================================================
-// useFilteredData.ts
-// Memoized hook that applies active filter conditions to a dataset.
-// Re-computes only when data or appliedConditions change.
-// ============================================================
-
 import { useMemo } from 'react';
 import { applyFilters } from '../utils/filterEngine';
 import type { FilterCondition, FilterFieldDefinition } from '../types/filter.types';
 
-/**
- * Builds a flat fieldKey → FieldType map from the field definitions array.
- * Memoized separately so it only recomputes when fieldDefinitions changes.
- */
 function buildFieldTypeMap(
   fieldDefinitions: FilterFieldDefinition[],
 ): Record<string, string> {
@@ -22,8 +12,6 @@ function buildFieldTypeMap(
 }
 
 /**
- * Hook that returns filtered data given a dataset, field definitions, and
- * the list of currently applied (not pending) filter conditions.
  *
  * @param data - Full dataset
  * @param appliedConditions - Conditions after the user clicked "Apply"

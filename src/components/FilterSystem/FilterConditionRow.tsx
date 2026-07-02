@@ -1,7 +1,3 @@
-// FilterConditionRow.tsx
-// Renders a single filter row: [Field Selector] [Operator Selector] [Value Input] [Delete]
-// Value input is dynamically chosen based on the selected field's FieldType.
-
 import React from 'react';
 import {
   Box,
@@ -38,15 +34,14 @@ interface FilterConditionRowProps {
   onRemove: (id: string) => void;
 }
 
-/** Returns an empty/default value for a newly-selected field type. */
 function getDefaultValue(type: string): FilterValue {
   switch (type) {
     case 'date':
-    case 'amount':    return ['', ''];
+    case 'amount': return ['', ''];
     case 'multiselect': return [];
-    case 'boolean':   return 'true';
-    case 'number':    return '';
-    default:          return '';
+    case 'boolean': return 'true';
+    case 'number': return '';
+    default: return '';
   }
 }
 

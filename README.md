@@ -79,40 +79,6 @@ src/
 
 ---
 
-## ⚙️ Using the Filter System with a Different Table
-
-1. Define your data model in `types/`
-2. Create a config file, e.g. `config/transactionFilterConfig.ts`:
-
-```ts
-const TRANSACTION_FILTER_CONFIG: FilterFieldDefinition[] = [
-  { key: 'amount',        label: 'Amount',         type: 'amount' },
-  { key: 'paymentMethod', label: 'Payment Method', type: 'select',
-    options: [
-      { value: 'Card', label: 'Card' },
-      { value: 'Bank', label: 'Bank' },
-      { value: 'UPI',  label: 'UPI' },
-    ]
-  },
-  { key: 'isRefunded',   label: 'Refunded',        type: 'boolean' },
-];
-```
-
-3. Pass the config to `FilterBuilder`:
-
-```tsx
-<FilterBuilder
-  fieldDefinitions={TRANSACTION_FILTER_CONFIG}
-  onApply={handleApply}
-  appliedCount={appliedConditions.length}
-  isOpen={isOpen}
-  onToggle={() => setIsOpen(v => !v)}
-/>
-```
-
-**Zero internal changes needed.**
-
----
 
 ## 🔍 Supported Filter Types
 

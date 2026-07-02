@@ -1,8 +1,3 @@
-// FilterBuilder.tsx
-// Root orchestrator for the filter panel.
-// Manages the list of FilterConditionRows and exposes Add / Apply / Clear actions.
-// Receives fieldDefinitions as the only external config — zero internal hardcoding.
-
 import React from 'react';
 import {
   Box,
@@ -46,10 +41,6 @@ export const FilterBuilder: React.FC<FilterBuilderComponentProps> = ({
     clearAll();
     onApply([]);
   };
-
-  // When a row is deleted via the dustbin icon we must also update the
-  // applied conditions so the table resets immediately (without needing
-  // the user to click "Apply Filters" again).
   const handleRemove = (id: string) => {
     removeFilter(id);
     onApply(conditions.filter((c) => c.id !== id));

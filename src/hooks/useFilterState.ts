@@ -1,10 +1,3 @@
-// ============================================================
-// useFilterState.ts
-// useReducer-based hook for managing the list of FilterConditions.
-// Handles add, update, remove, clear, and set-all operations.
-// Also persists filter state to localStorage automatically.
-// ============================================================
-
 import { useReducer, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import type { FilterCondition, FilterAction } from '../types/filter.types';
@@ -56,9 +49,7 @@ function loadFromStorage(): FilterCondition[] {
 }
 
 /**
- * Hook that owns the filter condition list and exposes action dispatchers.
- *
- * @param initialConditions - Optional seed conditions (overrides localStorage)
+ * @param initialConditions 
  */
 export function useFilterState(initialConditions?: FilterCondition[]) {
   const [conditions, dispatch] = useReducer(
@@ -77,11 +68,11 @@ export function useFilterState(initialConditions?: FilterCondition[]) {
 
   return {
     conditions,
-    addFilter:    ()                                        => dispatch({ type: 'ADD_FILTER' }),
+    addFilter: () => dispatch({ type: 'ADD_FILTER' }),
     updateFilter: (payload: Partial<FilterCondition> & { id: string }) =>
-                                                              dispatch({ type: 'UPDATE_FILTER', payload }),
-    removeFilter: (id: string)                             => dispatch({ type: 'REMOVE_FILTER', payload: { id } }),
-    clearAll:     ()                                        => dispatch({ type: 'CLEAR_ALL' }),
-    setFilters:   (filters: FilterCondition[])             => dispatch({ type: 'SET_FILTERS', payload: filters }),
+      dispatch({ type: 'UPDATE_FILTER', payload }),
+    removeFilter: (id: string) => dispatch({ type: 'REMOVE_FILTER', payload: { id } }),
+    clearAll: () => dispatch({ type: 'CLEAR_ALL' }),
+    setFilters: (filters: FilterCondition[]) => dispatch({ type: 'SET_FILTERS', payload: filters }),
   };
 }
